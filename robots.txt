@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ar93027666z-lang.github.io/btc-teardown-offer-site/sitemap.xml
