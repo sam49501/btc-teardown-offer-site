@@ -1,0 +1,250 @@
+:root {
+  --bg: #f0e6d7;
+  --paper: rgba(255, 251, 244, 0.8);
+  --ink: #1b1611;
+  --muted: #5d5348;
+  --accent: #b44f19;
+  --accent-2: #23453d;
+  --line: rgba(27, 22, 17, 0.12);
+  --shadow: 0 20px 60px rgba(37, 27, 15, 0.12);
+  --hero: linear-gradient(135deg, rgba(180, 79, 25, 0.12), rgba(35, 69, 61, 0.16));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(180, 79, 25, 0.2), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(35, 69, 61, 0.18), transparent 24%),
+    var(--bg);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  line-height: 1.5;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 5px 5px;
+  mix-blend-mode: multiply;
+}
+
+.page {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.hero,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--paper);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 56px 28px;
+  background-image: var(--hero);
+}
+
+.panel {
+  margin-top: 22px;
+  padding: 28px;
+}
+
+.eyebrow,
+.section-tag,
+.microcopy {
+  font-family: "Aptos Mono", "SFMono-Regular", Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.section-tag {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  font-size: 0.82rem;
+}
+
+.microcopy {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 18px;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 0.96;
+}
+
+h2 {
+  max-width: 18ch;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.02;
+}
+
+h3 {
+  font-size: 1.16rem;
+}
+
+.lede {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--ink);
+  color: #fff7ed;
+}
+
+.button-secondary {
+  color: var(--ink);
+  background: transparent;
+}
+
+.panel-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.three-up {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  min-height: 180px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.featured {
+  border-color: rgba(180, 79, 25, 0.28);
+  background: rgba(180, 79, 25, 0.12);
+}
+
+.dark-card {
+  background: #1f1a15;
+  color: #f6ede2;
+}
+
+.tier-label {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  font-family: "Aptos Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.stack > :last-child {
+  margin-bottom: 0;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 820px) {
+  .page {
+    width: min(100% - 20px, 1080px);
+    padding-top: 18px;
+  }
+
+  .hero,
+  .panel {
+    border-radius: 22px;
+    padding: 22px;
+  }
+
+  .three-up,
+  .two-up,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+}
