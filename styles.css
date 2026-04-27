@@ -87,6 +87,11 @@ body {
   font-size: 0.78rem;
 }
 
+.microcopy a,
+.inline-link {
+  color: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -140,6 +145,10 @@ h3 {
   transform: translateY(-1px);
 }
 
+.button-full {
+  width: 100%;
+}
+
 .button-primary {
   background: var(--ink);
   color: #fff7ed;
@@ -190,6 +199,12 @@ h3 {
 .dark-card {
   background: #1f1a15;
   color: #f6ede2;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .tier-label {
