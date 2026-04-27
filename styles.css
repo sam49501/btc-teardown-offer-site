@@ -61,6 +61,22 @@ body {
   background-image: var(--hero);
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 340px);
+  gap: 22px;
+  align-items: end;
+}
+
+.hero-copy > :last-child {
+  margin-bottom: 0;
+}
+
+.hero-side {
+  display: grid;
+  gap: 14px;
+}
+
 .panel {
   margin-top: 22px;
   padding: 28px;
@@ -100,9 +116,9 @@ p {
 }
 
 h1 {
-  max-width: 12ch;
+  max-width: 10ch;
   margin-bottom: 18px;
-  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
   line-height: 0.96;
 }
 
@@ -207,6 +223,49 @@ h3 {
   justify-content: space-between;
 }
 
+.side-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.side-card h3 {
+  margin-bottom: 10px;
+}
+
+.side-card p:last-child,
+.side-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.side-card-dark {
+  background: #1f1a15;
+  color: #f6ede2;
+}
+
+.side-label {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  font-family: "Aptos Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.side-card-dark .side-label {
+  color: #d6c5af;
+}
+
+.compact-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.compact-list li + li {
+  margin-top: 6px;
+}
+
 .tier-label {
   margin: 0 0 8px;
   color: var(--accent-2);
@@ -255,7 +314,8 @@ h3 {
 
   .three-up,
   .two-up,
-  .split {
+  .split,
+  .hero-grid {
     grid-template-columns: 1fr;
   }
 
