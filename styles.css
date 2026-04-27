@@ -122,6 +122,11 @@ h1 {
   line-height: 0.96;
 }
 
+.hero-title-wide {
+  max-width: 13ch;
+  font-size: clamp(2.4rem, 5.1vw, 4.1rem);
+}
+
 h2 {
   max-width: 18ch;
   font-size: clamp(1.8rem, 4vw, 3rem);
