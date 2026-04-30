@@ -1,0 +1,56 @@
+name: Paid teardown intake
+description: Submit the required details after BTC payment.
+title: "Paid teardown intake: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit this only after BTC payment. Do not include private keys, seed phrases, passwords, customer lists, or confidential data.
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      description: The public page to review.
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: textarea
+    id: target_customer
+    attributes:
+      label: Target customer
+      description: Who the page should convert.
+      placeholder: B2B SaaS founders, marketing teams, agencies, etc.
+    validations:
+      required: true
+  - type: input
+    id: current_cta
+    attributes:
+      label: Current CTA
+      description: The main action the page asks visitors to take.
+      placeholder: Book a demo
+    validations:
+      required: true
+  - type: input
+    id: competitor_link
+    attributes:
+      label: Competitor link
+      description: One public page that sells to a similar buyer.
+      placeholder: https://competitor.example.com
+    validations:
+      required: true
+  - type: input
+    id: payment_reference
+    attributes:
+      label: BTC payment reference
+      description: Optional transaction ID or wallet reference.
+      placeholder: txid or wallet reference
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional context. Keep it public-safe.
+      placeholder: Anything specific to check, avoid, or prioritize.
+    validations:
+      required: false
