@@ -1,0 +1,66 @@
+name: Digital product intake
+description: Submit required details after BTC payment for a digital kit.
+title: "Digital product intake: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit this only after BTC payment. Do not include private keys, seed phrases, passwords, customer lists, or confidential data.
+  - type: dropdown
+    id: product_id
+    attributes:
+      label: Product
+      description: Select the kit you purchased.
+      options:
+        - Lead Ops Automation Kit (PowerShell)
+        - B2B Outreach Playbook Kit
+        - Landing Page Teardown SOP Kit
+    validations:
+      required: true
+  - type: dropdown
+    id: price_tier
+    attributes:
+      label: Price tier
+      description: Select the paid tier.
+      options:
+        - Basic
+        - Standard
+        - Premium
+    validations:
+      required: true
+  - type: input
+    id: delivery_email
+    attributes:
+      label: Delivery email
+      description: Email for delivery confirmation.
+      placeholder: you@example.com
+    validations:
+      required: true
+  - type: input
+    id: btc_payment_reference
+    attributes:
+      label: BTC payment reference
+      description: Transaction ID or wallet reference.
+      placeholder: txid or wallet reference
+    validations:
+      required: true
+  - type: textarea
+    id: usage_context
+    attributes:
+      label: Usage context
+      description: Optional context on how you plan to use the kit.
+      placeholder: Team size, target workflow, deadlines, or integration notes.
+    validations:
+      required: false
+  - type: dropdown
+    id: preferred_storefront
+    attributes:
+      label: Preferred storefront
+      description: Optional preferred checkout/storefront lane.
+      options:
+        - Direct checkout from offer site
+        - Lemon Squeezy
+        - Payhip
+    validations:
+      required: false
+
