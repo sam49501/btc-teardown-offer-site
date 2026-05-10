@@ -1,0 +1,65 @@
+name: $5 or $10 microservice intake
+description: Request one small AI, n8n, SEO, or landing-page microservice.
+title: "Microservice intake: [service name]"
+labels:
+  - microservice-intake
+  - manual-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit this before payment. If the request fits, an operator sends a Binance USDT/BEP20 payment instruction packet. Do not paste secrets, private keys, API keys, passwords, or live credentials.
+  - type: dropdown
+    id: service
+    attributes:
+      label: Service
+      description: Choose one service.
+      options:
+        - $5 - 5-Minute Landing Page Teardown
+        - $5 - SEO Meta + AI Search Snippet Pack
+        - $10 - n8n Workflow Triage Mini-Audit
+        - $10 - Lead Capture Automation Blueprint
+    validations:
+      required: true
+  - type: input
+    id: public_url
+    attributes:
+      label: Public URL or workflow context
+      description: For page services, paste the public URL. For n8n triage, describe the workflow and attach a redacted export or screenshots after opening the issue.
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: textarea
+    id: target_customer
+    attributes:
+      label: Target customer / audience
+      description: Who is this for?
+      placeholder: Solo founders selling an AI support tool to small SaaS teams.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What outcome do you want from this small service?
+      placeholder: Make the hero clearer and produce stronger CTA copy.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Extra context
+      description: Add current CTA, target keyword, error text, workflow trigger, destination, or forbidden claims. Remove secrets.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed secrets, API keys, private links, private customer data, and credentials.
+          required: true
+        - label: I understand payment instructions are sent only after manual qualification.
+          required: true
+        - label: I understand delivery is manual and starts only after payment verification.
+          required: true
